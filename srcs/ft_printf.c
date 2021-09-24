@@ -6,11 +6,11 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 14:29:31 by lbatista          #+#    #+#             */
-/*   Updated: 2021/09/24 14:29:56 by lbatista         ###   ########.fr       */
+/*   Updated: 2021/09/24 14:57:49 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_libftprintf.h"
 
 int	ft_printf(const char *format, ...)
 {

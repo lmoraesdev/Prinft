@@ -1,5 +1,5 @@
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
 
 # include <stdarg.h>
 # include <stdlib.h>
