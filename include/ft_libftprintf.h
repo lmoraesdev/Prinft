@@ -1,5 +1,5 @@
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
 
 # include <stdarg.h>
 # include <stdlib.h>
@@ -77,7 +77,5 @@ void		ft_convert_pct(t_holder *h);
 void		ft_fill_left_pad(char **src, char padding, int width);
 void		ft_fill_right_pad(char **src, char padding, int width);
 void		ft_add_prefix(t_holder	*h, int sign);
-
-#endif
 
 #endif
