@@ -1,6 +1,7 @@
 #ifndef LIBFTPRINTF_H
 # define LIBFTPRINTF_H
 
+# include <stdio.h>
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
