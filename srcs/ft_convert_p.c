@@ -6,7 +6,7 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 19:03:46 by lbatista          #+#    #+#             */
-/*   Updated: 2021/09/27 19:14:28 by lbatista         ###   ########.fr       */
+/*   Updated: 2021/09/27 20:01:42 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static char	*ft_nullset(t_holder *h)
 		number = (char *)malloc((h->precision + 1) * sizeof(char));
 		if (!number)
 			return (NULL);
-		ft_memset(number, '0',(size_t)h->precision);
+		ft_memset(number, '0', (size_t)h->precision);
 		number[h->precision] = '\0';
 	}
 	else

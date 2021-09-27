@@ -6,7 +6,7 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 19:28:08 by lbatista          #+#    #+#             */
-/*   Updated: 2021/09/27 19:40:16 by lbatista         ###   ########.fr       */
+/*   Updated: 2021/09/27 20:02:13 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_convert_ux(t_format *fmt, t_holder *h, char *base)
 {
 	unsigned int	nbr;
-	char		*number;
+	char			*number;
 
 	number = NULL;
 	nbr = (unsigned int)(va_arg(fmt->ap, unsigned int));
