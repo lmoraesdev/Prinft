@@ -1,7 +1,19 @@
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_libftprintf.h                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/27 21:00:52 by lbatista          #+#    #+#             */
+/*   Updated: 2021/09/27 21:00:53 by lbatista         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-# include <stdio.h>
+
+#ifndef FT_LIBFTPRINTF_H
+# define Ft_LIBFTPRINTF_H
+
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -9,26 +21,26 @@
 # include <wchar.h>
 # include "../libft/libft.h"
 
-# define	HOLDER_CONVERSION "cspdiuxX%o"
-# define	HOLDER_ALL "-0# +123456789*"
-# define	HOLDER_ALL_FLAGS "-0# +"
-# define	HOLDER_JUSTIFY '-'
-# define	HOLDER_PREFIX "# +"
-# define	HOLDER_PAD '0'
-# define	HOLDER_PRECISION '.'
-# define	HOLDER_STAR '*'
+# define HOLDER_CONVERSION "cspdiuxX%o"
+# define HOLDER_ALL "-0# +123456789*"
+# define HOLDER_ALL_FLAGS "-0# +"
+# define HOLDER_JUSTIFY '-'
+# define HOLDER_PREFIX "# +"
+# define HOLDER_PAD '0'
+# define HOLDER_PRECISION '.'
+# define HOLDER_STAR '*'
 
-# define	OCTAL_BASE "01234567"
-# define	DECIMAL_BASE "0123456789"
-# define	HEXADECIMAL_U_BASE "0123456789ABCDEF"
-# define	HEXADECIMAL_L_BASE "0123456789abcdef"
+# define OCTAL_BASE "01234567"
+# define DECIMAL_BASE "0123456789"
+# define HEXADECIMAL_U_BASE "0123456789ABCDEF"
+# define HEXADECIMAL_L_BASE "0123456789abcdef"
 
-# define	PTR_HEX_L_PREFIX "0x"
-# define	HEX_U_PREFIX "0X"
-# define	OCT_PREFIX "0"
-# define	MINUS '-'
-# define	PLUS '+'
-# define	SPACE ' '
+# define PTR_HEX_L_PREFIX "0x"
+# define HEX_U_PREFIX "0X"
+# define OCT_PREFIX "0"
+# define MINUS '-'
+# define PLUS '+'
+# define SPACE ' '
 
 typedef struct s_format
 {
