@@ -6,37 +6,12 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 13:17:49 by lbatista          #+#    #+#             */
-/*   Updated: 2021/09/27 20:02:31 by lbatista         ###   ########.fr       */
+/*   Updated: 2021/09/28 16:45:38 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_libftprintf.h"
-
-static void	ft_convert_d_i_width(t_holder *h, int sign)
-{
-	if (h->left_justify)
-	{
-		ft_add_prefix(h, sign);
-		ft_fill_right_pad(&h->argument, ' ', h->width);
-	}
-	else
-	{
-		if (h->padding == ' ')
-		{
-			ft_add_prefix(h, sign);
-			ft_fill_left_pad(&h->argument, h->padding, h->width);
-		}
-		else if (h->padding == '0')
-		{
-			if (sign < 0 || ft_strchr(h->prefix, ' ') || \
-			ft_strchr(h->prefix, '+'))
-				ft_fill_left_pad(&h->argument, h->padding, h->width);
-			else
-				ft_fill_left_pad(&h->argument, h->padding, h->width);
-			ft_add_prefix(h, sign);
-		}
-	}
-}
+static void	ft_convert_d_i_width(t_holder *h, int sign);
 
 void	ft_convert_d_i(t_format *fmt, t_holder *h)
 {
@@ -60,4 +35,30 @@ void	ft_convert_d_i(t_format *fmt, t_holder *h)
 	}
 	ft_convert_d_i_width(h, sign);
 	h->len = ft_strlen(h->argument);
+}
+
+static void	ft_convert_d_i_width(t_holder *h, int sign)
+{
+	if (h->left_justify)
+	{
+		ft_add_prefix(h, sign);
+		ft_fill_right_pad(&h->argument, ' ', h->width);
+	}
+	else
+	{
+		if (h->padding == ' ')
+		{
+			ft_add_prefix(h, sign);
+			ft_fill_left_pad(&h->argument, h->padding, h->width);
+		}
+		else if (h->padding == '0')
+		{
+			if (sign < 0 || ft_strchr(h->prefix, ' ') || \
+				ft_strchr(h->prefix, '+'))
+				ft_fill_left_pad(&h->argument, h->padding, h->width - 1);
+			else
+				ft_fill_left_pad(&h->argument, h->padding, h->width);
+			ft_add_prefix(h, sign);
+		}
+	}
 }

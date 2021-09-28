@@ -6,7 +6,7 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 19:18:26 by lbatista          #+#    #+#             */
-/*   Updated: 2021/09/28 16:08:08 by lbatista         ###   ########.fr       */
+/*   Updated: 2021/09/28 16:47:23 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_convert_s(t_format *fmt, t_holder *h)
 		h->argument = ft_strndup(temp, (size_t)h->precision);
 		free(temp);
 	}
-	if (h->left_justify)
+	if (!h->left_justify)
 		ft_fill_left_pad(&h->argument, ' ', h->width);
 	else
 		ft_fill_right_pad(&h->argument, ' ', h->width);

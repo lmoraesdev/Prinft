@@ -6,7 +6,7 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 13:09:02 by lbatista          #+#    #+#             */
-/*   Updated: 2021/09/27 20:08:08 by lbatista         ###   ########.fr       */
+/*   Updated: 2021/09/28 16:46:36 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_convert_c(t_format *fmt, t_holder *h)
 	if (!h->argument)
 		return ;
 	ft_memset(h->argument, SPACE, h->width);
-	if ((!h->left_justify) == 1)
+	if (h->left_justify == 1)
 		h->argument[0] = ch;
 	else
 		h->argument[h->width - 1] = ch;
