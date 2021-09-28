@@ -6,11 +6,12 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 19:03:46 by lbatista          #+#    #+#             */
-/*   Updated: 2021/09/28 16:47:07 by lbatista         ###   ########.fr       */
+/*   Updated: 2021/09/28 17:05:54 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_libftprintf.h"
+
 static char	*ft_nullset(t_holder *h);
 
 void	ft_convert_p(t_format *fmt, t_holder *h)

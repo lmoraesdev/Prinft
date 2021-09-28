@@ -6,11 +6,12 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 13:17:49 by lbatista          #+#    #+#             */
-/*   Updated: 2021/09/28 16:45:38 by lbatista         ###   ########.fr       */
+/*   Updated: 2021/09/28 17:05:44 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_libftprintf.h"
+
 static void	ft_convert_d_i_width(t_holder *h, int sign);
 
 void	ft_convert_d_i(t_format *fmt, t_holder *h)

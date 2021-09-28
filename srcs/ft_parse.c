@@ -6,12 +6,12 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 19:43:24 by lbatista          #+#    #+#             */
-/*   Updated: 2021/09/28 16:44:47 by lbatista         ###   ########.fr       */
+/*   Updated: 2021/09/28 17:06:49 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_libftprintf.h"
-# include <stdio.h>
+#include <stdio.h>
 
 void	*ft_parse(t_format *fmt, t_holder *h)
 {
