@@ -6,13 +6,13 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 21:00:52 by lbatista          #+#    #+#             */
-/*   Updated: 2021/09/27 21:00:53 by lbatista         ###   ########.fr       */
+/*   Updated: 2021/09/28 15:47:42 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #ifndef FT_LIBFTPRINTF_H
-# define Ft_LIBFTPRINTF_H
+# define FT_LIBFTPRINTF_H
 
 # include <stdarg.h>
 # include <stdlib.h>
