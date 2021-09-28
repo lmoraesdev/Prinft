@@ -6,7 +6,7 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 19:18:26 by lbatista          #+#    #+#             */
-/*   Updated: 2021/09/27 19:28:01 by lbatista         ###   ########.fr       */
+/*   Updated: 2021/09/28 16:08:08 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_convert_s(t_format *fmt, t_holder *h)
 
 	s = ft_strdup(va_arg(fmt->ap, char *));
 	if (!s)
-		s = ft_strdup("(NULL)");
+		s = ft_strdup("(null)");
 	len = (int)ft_strlen(s);
 	h->argument = (char *)malloc((len + 1) * sizeof(char));
 	if (!h->argument)
