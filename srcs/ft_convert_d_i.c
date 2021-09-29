@@ -6,37 +6,11 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 13:17:49 by lbatista          #+#    #+#             */
-/*   Updated: 2021/09/28 17:05:44 by lbatista         ###   ########.fr       */
+/*   Updated: 2021/09/29 10:52:24 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_libftprintf.h"
-
-static void	ft_convert_d_i_width(t_holder *h, int sign);
-
-void	ft_convert_d_i(t_format *fmt, t_holder *h)
-{
-	int			sign;
-	long int	arg;
-
-	sign = 1;
-	arg = (int)va_arg(fmt->ap, int);
-	if (arg < 0)
-		sign *= -1;
-	h->argument = ft_uitoa_base(sign * arg, DECIMAL_BASE);
-	if (h->precision > -1)
-	{
-		if (!h->precision && arg == 0)
-		{
-			free(h->argument);
-			h->argument = ft_strdup("");
-		}
-		ft_fill_left_pad(&h->argument, '0', h->precision);
-		h->padding = ' ';
-	}
-	ft_convert_d_i_width(h, sign);
-	h->len = ft_strlen(h->argument);
-}
 
 static void	ft_convert_d_i_width(t_holder *h, int sign)
 {
@@ -62,4 +36,28 @@ static void	ft_convert_d_i_width(t_holder *h, int sign)
 			ft_add_prefix(h, sign);
 		}
 	}
+}
+
+void	ft_convert_d_i(t_format *fmt, t_holder *h)
+{
+	int			sign;
+	long int	arg;
+
+	sign = 1;
+	arg = (int)va_arg(fmt->ap, int);
+	if (arg < 0)
+		sign *= -1;
+	h->argument = ft_uitoa_base(sign * arg, DECIMAL_BASE);
+	if (h->precision > -1)
+	{
+		if (!h->precision && arg == 0)
+		{
+			free(h->argument);
+			h->argument = ft_strdup("");
+		}
+		ft_fill_left_pad(&h->argument, '0', h->precision);
+		h->padding = ' ';
+	}
+	ft_convert_d_i_width(h, sign);
+	h->len = ft_strlen(h->argument);
 }

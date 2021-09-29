@@ -6,13 +6,28 @@
 /*   By: lbatista <lbatista@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 19:41:44 by lbatista          #+#    #+#             */
-/*   Updated: 2021/09/28 17:06:16 by lbatista         ###   ########.fr       */
+/*   Updated: 2021/09/29 10:50:45 by lbatista         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_libftprintf.h"
 
-static void	ft_prefix_ux(t_holder *h);
+static void	ft_prefix_ux(t_holder *h)
+{
+	char	*temp;
+
+	temp = h->argument;
+	if (ft_strchr(h->prefix, '#'))
+	{
+		if (h->conversion == 'x')
+			h->argument = ft_strjoin(PTR_HEX_L_PREFIX, temp);
+		if (h->conversion == 'X')
+			h->argument = ft_strjoin(HEX_U_PREFIX, temp);
+		if (h->conversion == 'o')
+			h->argument = ft_strjoin(OCT_PREFIX, temp);
+		free(temp);
+	}
+}
 
 void	ft_type_conversion(t_format *fmt, t_holder *h)
 {
@@ -94,21 +109,4 @@ void	ft_add_prefix(t_holder	*h, int sign)
 	else if (h->conversion == 'x' || h->conversion == 'X' \
 			|| h->conversion == 'o')
 		ft_prefix_ux(h);
-}
-
-static void	ft_prefix_ux(t_holder *h)
-{
-	char	*temp;
-
-	temp = h->argument;
-	if (ft_strchr(h->prefix, '#'))
-	{
-		if (h->conversion == 'x')
-			h->argument = ft_strjoin(PTR_HEX_L_PREFIX, temp);
-		if (h->conversion == 'X')
-			h->argument = ft_strjoin(HEX_U_PREFIX, temp);
-		if (h->conversion == 'o')
-			h->argument = ft_strjoin(OCT_PREFIX, temp);
-		free(temp);
-	}
 }
